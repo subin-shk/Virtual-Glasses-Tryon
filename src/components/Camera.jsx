@@ -12,7 +12,10 @@ export function Camera({ glassesType }) {
   useEffect(() => {
     if (isWebcamOn && videoRef.current) {
       const onResults = (results) => {
-        if (results.multiFaceLandmarks && results.multiFaceLandmarks.length > 0) {
+        if (
+          results.multiFaceLandmarks &&
+          results.multiFaceLandmarks.length > 0
+        ) {
           setLandmarks(results.multiFaceLandmarks[0]); // Get the first face's landmarks
         }
       };
